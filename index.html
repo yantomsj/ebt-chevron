@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaintery - Program Afiliasi 4% Laba Harian</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Preload gambar hero -->
+    
+    <link rel="preload" as="image" href="assets/home-banner2_1.webp" media="(max-width: 768px)">
+</head>
+<body>
+  <!-- Header/Hero Section -->
+  <header class="hero">
+    <!-- Ganti tag img dengan picture untuk art direction -->
+    <picture>
+        <source media="(max-width: 768px)" srcset="assets/home-banner2_1.webp">
+        <source media="(min-width: 769px)" srcset="assets/home-banner2_1.webp">
+        <img src="assets/home-banner2_1.webp" alt="Investasi Chaintery" class="hero-bg">
+    </picture>
+    <div class="container">
+      <h1>Dapatkan Passive Income hingga <span>4% Per Hari</span> dengan Chaintery!</h1>
+      <p>Bergabunglah sebagai anggota VIP sekarang dan nikmati keuntungan dari produk investasi berbasis blockchain.</p>
+      <div class="cta-buttons">
+        <a href="https://chaintery.com/pages/undang?code=ZEUSPC" class="btn btn-primary">Daftar Sekarang</a>
+        <a href="#fitur" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Countdown Timer -->
+<div class="countdown-container glow-effect">
+    <p>🔥 <span id="promo-text">Promo Berakhir Dalam:</span></p>
+    <div class="countdown">
+      <span id="hours">00</span>:
+      <span id="minutes">00</span>:
+      <span id="seconds">00</span>
+    </div>
+    <small>Dapatkan +1% Bonus Laba untuk pendaftar hari ini!</small>
+  </div>
+
+  <!-- Fitur & Manfaat -->
+  <section id="fitur" class="features">
+    <div class="particles"></div>
+    <div class="container">
+      <h2>Kenapa Memilih Chaintery?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+        <img src="assets/f33abd293b1df56546415ae4dce40246.jpg" alt="Produk Investasi" class="card1">  
+          <div class="icon">💰</div>
+          <h3>Produk Investasi</h3>
+          <p>Mulai dari Rp180.000 dengan laba 4% dalam 20 hari.</p>
+        </div>
+        <div class="feature-card">
+        <img src="assets/affiliate-tugas.jpg" alt="Produk Investasi" class="card">   
+          <div class="icon">👥</div>
+          <h3>Komisi Afiliasi</h3>
+          <p>Dapatkan 30% komisi dari anggota baru yang bergabung.</p>
+        </div>
+        <div class="feature-card">
+        <img src="assets/vip-img.png" alt="Produk Investasi" class="card">  
+          <div class="icon">⭐</div>
+          <h3 class="vip-bonus">VIP Bonus</h3>
+    <p class="card-highlight">Bonus hingga <span class="glow-text">Rp9.000.000</span></p>
+    <p>untuk level VIP7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkulator Laba -->
+  <section class="calculator-section">
+    <div class="container">
+      <h2>Hitung Potensi Laba Anda</h2>
+      <div class="calculator">
+        <input type="number" id="investment" placeholder="Rp 6.000.000" min="180000">
+        <button onclick="hitungLaba()" class="hitung-btn">Hitung</button>
+        <p id="hasil">Laba 180 Hari: <span>Rp 0</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produk Unggulan -->
+  <section class="products">
+    <div class="container">
+      <h2>Produk Unggulan</h2>
+      <div class="product-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama Produk</th>
+              <th>Laba Harian</th>
+              <th>Laba Total</th>
+              <th>Harga</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0-2712-N7-ID</td>
+              <td>Rp 144.000</td>
+              <td>Rp 25.920.000</td>
+              <td>Rp 6.000.000</td>
+              <td><button class="btn-small">Beli Ini</button></td>
+            </tr>
+            <!-- Tambahkan produk lainnya -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Kisah Sukses Member</h2>
+      <div class="success-slider">
+        <div class="slide active">
+          <div class="member-header">
+            <span class="member-id">EBT-<span class="hidden-digits">38</span></span>
+            <span class="ebt4dg"></span>
+            <span class="vip-level">VIP4</span>
+          </div>
+          
+          <div class="profit-display">
+            <div class="profit-item">
+              <span class="label">Laba Harian</span>
+              <span class="value random-amount">Rp144.000</span>
+            </div>
+            <div class="profit-item">
+              <span class="label">Laba Total</span>
+              <span class="value random-amount">Rp25.920.000</span>
+            </div>
+            <div class="profit-item">
+              <span class="label">Investasi</span>
+              <span class="value random-amount">Rp6.000.000</span>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <span class="highlight-amount">Rp51.840.000</span>
+          </div>
+        </div>
+        
+        <!-- Slide dapat ditambahkan lebih banyak -->
+      </div>
+      
+      <div class="slider-controls">
+        <button class="prev-btn">❮</button>
+        <button class="next-btn">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Akhir -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Mulai Raih Keuntungan Hari Ini!</h2>
+      <a href="https://chaintery.com/pages/undang?code=ZEUSPC" class="btn-primary">Daftar Sekarang</a>
+      <p class="small-text">Gunakan kode <strong>ZEUSPC</strong> untuk prioritas verifikasi.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2024 Chaintery Affiliate. Bukan bagian resmi dari Chaintery.com.</p>
+      <a href="https://wa.me/qr/WVB26PIIVACSP1" class="whatsapp-link">Hubungi Kami via WhatsApp</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

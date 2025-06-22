@@ -1,2 +1,0 @@
-# ebt-chevron
-EBT Chevron
