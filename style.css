@@ -136,12 +136,28 @@
   }
   
   .calculator input {
-    width: 80%;
+    width: 60%;
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.5rem;
+  }
+  select#durasi {
+    transform: translateY(-3px);
+    /* box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4); */
+    background: linear-gradient(45deg, #10b981, #2563eb);
+    color: #ffff;
+    font-size: 20px;
+}
+.input-group {
+    display: flex;
+    gap: 10px; /* jarak antar elemen, bisa diubah sesuai keinginan */
+    align-items: center; /* agar sejajar vertikal */
+    margin-bottom: 10px; /* jarak dari elemen lain di atas/bawah */
+  }
+  option {
+      color: #000;
   }
   
   /* Responsive */
@@ -256,7 +272,34 @@
     align-items: center;
     gap: 10px;
   }
-  
+  .beli {
+    background: linear-gradient(45deg, #2563eb, #10b981);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.product-table {
+    margin: 0 -10px;
+    font-size: 0.9rem;
+}
+.produk-unggulan {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
   /* Efek Hover */
   .hitung-btn:hover {
     transform: translateY(-3px);
@@ -469,6 +512,11 @@
     
     .feature-card:first-child .card1 {
       object-position: 60% center; /* Adjust untuk mobile */
+    }
+
+    .produk-unggulan {
+        margin: 0 -10px;
+        padding: 0px;
     }
   }
 
