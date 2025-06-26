@@ -92,23 +92,33 @@
     </div>
   </section>
 
-  <!-- Kalkulator Laba -->
   <section class="calculator-section">
     <div class="container">
       <h2>Hitung Potensi Laba Anda</h2>
       <div class="calculator">
-        <input type="number" id="investment" placeholder="Rp 6.000.000" min="180000">
-        <button onclick="hitungLaba()" class="hitung-btn">Hitung</button>
-        <p id="hasil">Laba 180 Hari: <span>Rp 0</span></p>
+        <div class="input-group">
+            Rp<input type="number" id="investment" placeholder="" min="180000"/>
+            <select id="durasi">
+              <option value="1">1 Hari</option>
+              <option value="20">20 Hari</option>
+              <option value="120">120 Hari</option>
+              <option value="180" selected>180 Hari</option>
+            </select>
+          </div>
+          <!-- Tombol dan hasil tetap di bawah -->
+          <button onclick="hitungLaba()" class="hitung-btn">Hitung</button>
+          <p id="hasil">Laba: Rp 0</p>
       </div>
     </div>
   </section>
+  
+ 
 
   <!-- Produk Unggulan -->
   <section class="products">
     <div class="container">
       <h2>Produk Unggulan</h2>
-      <div class="product-table">
+      <div class="product-table produk-unggulan">
         <table>
           <thead>
             <tr>
@@ -121,11 +131,79 @@
           </thead>
           <tbody>
             <tr>
+              <td>B-2812-BK-1</td>
+              <td>Rp 6.300</td>
+              <td>Rp 1.184.400</td> <!-- 6.300 x 4 hari (96 jam) -->
+              <td>Rp 180.000</td>
+              <td>
+                <button class="btn-small beli">
+                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>B-2812-BK-2</td>
+              <td>Rp 14.350</td>
+              <td>Rp 2.697.800</td> <!-- 14.350 x 4 hari -->
+              <td>Rp 410.000</td>
+              <td>
+                <button class="btn-small beli">
+                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>B-2812-BK-3</td>
+              <td>Rp 33.060</td>
+              <td>Rp 6.204.000</td> <!-- 33.060 x 4 hari -->
+              <td>Rp 870.000</td>
+              <td>
+                <button class="btn-small beli">
+                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>B-2812-BK-4</td>
+              <td>Rp 77.900</td>
+              <td>Rp 14.645.200</td> <!-- 77.900 x 2 hari (48 jam) -->
+              <td>Rp 2.050.000</td>
+              <td>
+                <button class="btn-small beli">
+                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>B-2812-BK-5</td>
+              <td>Rp 154.400</td>
+              <td>Rp 29.027.200</td> <!-- 154.400 x 2 hari -->
+              <td>Rp 3.860.000</td>
+              <td>
+                <button class="btn-small beli">
+                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>B-2812-BK-6</td>
+              <td>Rp 304.000</td>
+              <td>Rp 27.072.000</td> <!-- 304.000 x 2 hari -->
+              <td>Rp 7.600.000</td>
+              <td>
+                <button class="btn-small beli">
+                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
               <td>0-2712-N7-ID</td>
               <td>Rp 144.000</td>
               <td>Rp 25.920.000</td>
               <td>Rp 6.000.000</td>
-              <td><button class="btn-small">Beli Ini</button></td>
+              <td><button class="btn-small beli"><a href="https://zxrseo.com/ebt-zeus" style="color: white !important;text-decoration: none;">Beli</a></button></td>
             </tr>
             <!-- Tambahkan produk lainnya -->
           </tbody>
