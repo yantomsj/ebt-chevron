@@ -1,0 +1,4 @@
+Sitemap: https://yantomsj.github.io/ebt-chevron/sitemap_weekly.xml
+
+User-agent: *
+Disallow:
