@@ -707,3 +707,34 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* FAQ Accordion */
+#faq {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+  }
+  .accordion-btn {
+    width: 100%;
+    text-align: left;
+    padding: 1em;
+    font-size: 1em;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .accordion-item.active .accordion-content {
+    max-height: 200px; /* atau sesuai konten */
+  }
+  .accordion {
+    max-width: 600px;
+    margin: 0 auto;
+}
