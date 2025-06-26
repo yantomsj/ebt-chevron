@@ -1,278 +1,155 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chaintery - Program Afiliasi EBT Chevron 4% Laba Harian</title>
-  <meta name="description" content="Informasi tentang proyek EBT Chevron di Indonesia, kolaborasi energi bersih, dan investasi panas bumi.">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="EBT, Chevron, energi terbarukan, panas bumi, energi bersih Indonesia">
-  <meta property="og:title" content="Chaintery - Program Afiliasi EBT Chevron 4% Laba Harian">
-  <meta property="og:description" content="Informasi tentang proyek EBT Chevron, energi baru & terbarukan, dan kolaborasi rendah karbon di Indonesia.">
-  <meta property="og:image" content="https://yantomsj.github.io/ebt-chevron/assets/home-banner_card.webp">
-  <meta property="og:url" content="https://yantomsj.github.io/ebt-chevron/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EBT Chevron di Indonesia">
-  <meta name="twitter:description" content=Informasi tentang proyek EBT Chevron, energi baru & terbarukan, dan kolaborasi rendah karbon di Indonesia.">
-  <meta name="twitter:image" content="https://yantomsj.github.io/ebt-chevron/assets/home-banner_card.webp">
+// Animasi Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Preload gambar hero -->
-    
-    <link rel="preload" as="image" href="assets/home-banner2_1.webp" media="(max-width: 768px)">
-    <meta name="google-site-verification" content="TN-gGSPZx5eeFQwg7e-xLBC8p-stB7-WwpJtpQCV4eY" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D96N0WF59H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+// Tombol Salin Link Afiliasi
+function salinLink() {
+  const link = "https://chaintery.com/pages/undang?code=ZEUSPC";
+  navigator.clipboard.writeText(link);
+  alert("Link afiliasi disalin! 🎉");
+}
 
-  gtag('config', 'G-D96N0WF59H');
-</script>
-</head>
-<body>
-  <!-- Header/Hero Section -->
-  <header class="hero">
-    <!-- Ganti tag img dengan picture untuk art direction -->
-    <picture>
-        <source media="(max-width: 768px)" srcset="assets/home-banner2_1.webp">
-        <source media="(min-width: 769px)" srcset="assets/home-banner2_1.webp">
-        <img src="assets/home-banner2_1.webp" alt="Investasi Chaintery" class="hero-bg">
-    </picture>
-    <div class="container">
-      <h1>Dapatkan Passive Income hingga <span>4% Per Hari</span> dengan Chaintery!</h1>
-      <p>Bergabunglah sebagai anggota VIP sekarang dan nikmati keuntungan dari produk investasi berbasis blockchain.</p>
-      <div class="cta-buttons">
-        <a href="https://zxrseo.com/ebt-zeus" class="btn btn-primary">Daftar Sekarang</a>
-        <a href="#fitur" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
-      </div>
-    </div>
-  </header>
+// Countdown Timer (24 jam dari waktu akses)
+function startCountdown() {
+const endTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 jam dari sekarang
 
-  <!-- Countdown Timer -->
-<div class="countdown-container glow-effect">
-    <p>🔥 <span id="promo-text">Promo Berakhir Dalam:</span></p>
-    <div class="countdown">
-      <span id="hours">00</span>:
-      <span id="minutes">00</span>:
-      <span id="seconds">00</span>
-    </div>
-    <small>Dapatkan +1% Bonus Laba untuk pendaftar hari ini!</small>
-  </div>
+const timer = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = endTime - now;
 
-  <!-- Fitur & Manfaat -->
-  <section id="fitur" class="features">
-    <div class="particles"></div>
-    <div class="container">
-      <h2>Kenapa Memilih Chaintery?</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-        <img src="assets/f33abd293b1df56546415ae4dce40246.jpg" alt="Produk Investasi" class="card1">  
-          <div class="icon">💰</div>
-          <h3>Produk Investasi</h3>
-          <p>Mulai dari Rp180.000 dengan laba 4% dalam 20 hari.</p>
-        </div>
-        <div class="feature-card">
-        <img src="assets/affiliate-tugas.jpg" alt="Produk Investasi" class="card">   
-          <div class="icon">👥</div>
-          <h3>Komisi Afiliasi</h3>
-          <p>Dapatkan 30% komisi dari anggota baru yang bergabung.</p>
-        </div>
-        <div class="feature-card">
-        <img src="assets/vip-img.png" alt="Produk Investasi" class="card">  
-          <div class="icon">⭐</div>
-          <h3 class="vip-bonus">VIP Bonus</h3>
-    <p class="card-highlight">Bonus hingga <span class="glow-text">Rp9.000.000</span></p>
-    <p>untuk level VIP7</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  <section class="calculator-section">
-    <div class="container">
-      <h2>Hitung Potensi Laba Anda</h2>
-      <div class="calculator">
-        <div class="input-group">
-            Rp<input type="number" id="investment" placeholder="" min="180000"/>
-            <select id="durasi">
-              <option value="1">1 Hari</option>
-              <option value="20">20 Hari</option>
-              <option value="120">120 Hari</option>
-              <option value="180" selected>180 Hari</option>
-            </select>
-          </div>
-          <!-- Tombol dan hasil tetap di bawah -->
-          <button onclick="hitungLaba()" class="hitung-btn">Hitung</button>
-          <p id="hasil">Laba: Rp 0</p>
-      </div>
-    </div>
-  </section>
-  
- 
+  document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+  document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
 
-  <!-- Produk Unggulan -->
-  <section class="products">
-    <div class="container">
-      <h2>Produk Unggulan</h2>
-      <div class="product-table produk-unggulan">
-        <table>
-          <thead>
-            <tr>
-              <th>Nama Produk</th>
-              <th>Laba Harian</th>
-              <th>Laba Total</th>
-              <th>Harga</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>B-2812-BK-1</td>
-              <td>Rp 6.300</td>
-              <td>Rp 1.184.400</td> <!-- 6.300 x 4 hari (96 jam) -->
-              <td>Rp 180.000</td>
-              <td>
-                <button class="btn-small beli">
-                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>B-2812-BK-2</td>
-              <td>Rp 14.350</td>
-              <td>Rp 2.697.800</td> <!-- 14.350 x 4 hari -->
-              <td>Rp 410.000</td>
-              <td>
-                <button class="btn-small beli">
-                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>B-2812-BK-3</td>
-              <td>Rp 33.060</td>
-              <td>Rp 6.204.000</td> <!-- 33.060 x 4 hari -->
-              <td>Rp 870.000</td>
-              <td>
-                <button class="btn-small beli">
-                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>B-2812-BK-4</td>
-              <td>Rp 77.900</td>
-              <td>Rp 14.645.200</td> <!-- 77.900 x 2 hari (48 jam) -->
-              <td>Rp 2.050.000</td>
-              <td>
-                <button class="btn-small beli">
-                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>B-2812-BK-5</td>
-              <td>Rp 154.400</td>
-              <td>Rp 29.027.200</td> <!-- 154.400 x 2 hari -->
-              <td>Rp 3.860.000</td>
-              <td>
-                <button class="btn-small beli">
-                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>B-2812-BK-6</td>
-              <td>Rp 304.000</td>
-              <td>Rp 27.072.000</td> <!-- 304.000 x 2 hari -->
-              <td>Rp 7.600.000</td>
-              <td>
-                <button class="btn-small beli">
-                  <a href="https://zxrseo.com/ebt-zeus" style="color: white !important; text-decoration: none;">Beli</a>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td>0-2712-N7-ID</td>
-              <td>Rp 144.000</td>
-              <td>Rp 25.920.000</td>
-              <td>Rp 6.000.000</td>
-              <td><button class="btn-small beli"><a href="https://zxrseo.com/ebt-zeus" style="color: white !important;text-decoration: none;">Beli</a></button></td>
-            </tr>
-            <!-- Tambahkan produk lainnya -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+  if (distance < 0) {
+    clearInterval(timer);
+    document.getElementById("promo-text").innerHTML = "Promo telah berakhir!";
+    document.querySelector(".countdown").style.display = "none";
+  }
+}, 1000);
+}
 
-  <!-- Testimoni -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>Kisah Sukses Member</h2>
-      <div class="success-slider">
-        <div class="slide active">
-          <div class="member-header">
-            <span class="member-id">EBT-<span class="hidden-digits">38</span></span>
-            <span class="ebt4dg"></span>
-            <span class="vip-level">VIP4</span>
-          </div>
-          
-          <div class="profit-display">
-            <div class="profit-item">
-              <span class="label">Laba Harian</span>
-              <span class="value random-amount">Rp144.000</span>
-            </div>
-            <div class="profit-item">
-              <span class="label">Laba Total</span>
-              <span class="value random-amount">Rp25.920.000</span>
-            </div>
-            <div class="profit-item">
-              <span class="label">Investasi</span>
-              <span class="value random-amount">Rp6.000.000</span>
-            </div>
-          </div>
-          
-          <div class="testimonial">
-            <span class="highlight-amount">Rp51.840.000</span>
-          </div>
-        </div>
-        
-        <!-- Slide dapat ditambahkan lebih banyak -->
-      </div>
-      
-      <div class="slider-controls">
-        <button class="prev-btn">❮</button>
-        <button class="next-btn">❯</button>
-      </div>
-    </div>
-  </section>
+// Panggil fungsi saat halaman dimuat
+window.onload = startCountdown;
 
-  <!-- CTA Akhir -->
-  <section class="cta-final">
-    <div class="container">
-      <h2>Mulai Raih Keuntungan Hari Ini!</h2>
-      <a href="https://zxrseo.com/ebt-zeus" class="btn-primary">Daftar Sekarang</a>
-      <p class="small-text">Gunakan kode <strong>ZEUSPC</strong> untuk prioritas verifikasi.</p>
-    </div>
-  </section>
+// Animasi Partikel
+document.addEventListener('DOMContentLoaded', function() {
+const particles = document.querySelector('.particles');
+for (let i = 0; i < 50; i++) {
+  const particle = document.createElement('div');
+  particle.style.cssText = `
+    position: absolute;
+    width: ${Math.random() * 5 + 2}px;
+    height: ${Math.random() * 5 + 2}px;
+    background: rgba(255, 255, 255, ${Math.random() * 0.4 + 0.1});
+    border-radius: 50%;
+    top: ${Math.random() * 100}%;
+    left: ${Math.random() * 100}%;
+    animation: float ${Math.random() * 10 + 5}s linear infinite;
+  `;
+  particles.appendChild(particle);
+}
+});
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Chaintery Affiliate. Bukan bagian resmi dari Chaintery.com.</p>
-    </div>
-  </footer>
-<a href="https://wa.me/6285650847545" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat via WhatsApp">
-</a>
 
-  <script src="script.js"></script>
-</body>
-</html>
+window.addEventListener('scroll', function() {
+const hero = document.querySelector('.hero-bg');
+const scrollY = window.scrollY;
+hero.style.transform = `translateY(${scrollY * 0.3}px)`;
+});
+
+// Generate random data
+function generateRandomData() {
+const digits = Math.floor(100000 + Math.random() * 900000);
+const visibleDigits = String(digits).substring(0, 2);
+const vipLevel = `VIP${Math.floor(1 + Math.random() * 7)}`;
+const ebtNumber = Math.floor(1000 + Math.random() * 9000);
+
+const amounts = [
+    `Rp${Math.floor(100000 + Math.random() * 400000).toLocaleString('id-ID')}`,
+    `Rp${Math.floor(1000000 + Math.random() * 2000000).toLocaleString('id-ID')}`,
+    `Rp${Math.floor(1 + Math.random() * 10).toLocaleString('id-ID')}.000.000`
+];
+
+const testimonialAmount = `Rp${Math.floor(500000 + Math.random() * 9500000).toLocaleString('id-ID')}`;
+const testimonialDays = Math.floor(7 + Math.random() * 24); // 7–30 hari
+const testimonialText = `Berhasil menarik ${testimonialAmount} dalam ${testimonialDays} hari!`;
+
+document.querySelector('.ebt4dg').textContent = ebtNumber;
+
+return {
+    memberId: `EBT-${visibleDigits}${String(digits).substring(2)}`,
+    vipLevel,
+    amounts,
+    testimonialText
+};
+}
+
+// Update slide with random data
+function updateSlide() {
+const data = generateRandomData();
+
+document.querySelector('.hidden-digits').textContent = data.memberId.substring(5,7);
+document.querySelector('.vip-level').textContent = data.vipLevel;
+
+
+const amountElements = document.querySelectorAll('.random-amount');
+amountElements.forEach((el, i) => {
+  el.textContent = data.amounts[i];
+});
+
+document.querySelector('.highlight-amount').textContent = data.testimonialText;
+}
+
+// Auto slide
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+slides[currentSlide].classList.remove('active');
+currentSlide = (index + totalSlides) % totalSlides;
+slides[currentSlide].classList.add('active');
+updateSlide();
+}
+
+function hitungLaba() {
+  const investasiInput = document.getElementById("investment");
+  const durasiSelect = document.getElementById("durasi");
+  const hasilElement = document.getElementById("hasil");
+
+  const investasi = parseFloat(investasiInput.value);
+  const hari = parseInt(durasiSelect.value);
+
+  console.log('Investasi:', investasi);
+  console.log('Hari:', hari);
+
+  if (isNaN(investasi) || investasi <= 0) {
+    hasilElement.innerText = "Masukkan jumlah investasi yang valid.";
+    return;
+  }
+
+  const persenHarian = 0.04;
+  const laba = investasi * persenHarian * hari;
+
+  console.log('Laba:', laba);
+
+  const labaFormatted = laba.toLocaleString("id-ID", { style: "currency", currency: "IDR" });
+  hasilElement.innerText = `Laba ${hari} Hari: ${labaFormatted}`;
+}
+
+// Jalankan setiap 5 detik
+setInterval(() => showSlide(currentSlide + 1), 5000);
+
+// Inisialisasi
+updateSlide();
