@@ -148,6 +148,23 @@ function hitungLaba() {
   hasilElement.innerText = `Laba ${hari} Hari: ${labaFormatted}`;
 }
 
+/* FAQ Accordion */
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".accordion-item");
+
+  items.forEach((item) => {
+    const button = item.querySelector(".accordion-btn");
+    button.addEventListener("click", () => {
+      // Tutup semua item terlebih dahulu
+      items.forEach((el) => el.classList.remove("active"));
+      // Buka yang diklik jika belum terbuka
+      if (!item.classList.contains("active")) {
+        item.classList.add("active");
+      }
+    });
+  });
+});
+
 // Jalankan setiap 5 detik
 setInterval(() => showSlide(currentSlide + 1), 5000);
 
