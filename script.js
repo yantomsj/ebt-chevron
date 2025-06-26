@@ -150,20 +150,32 @@ function hitungLaba() {
 
 /* FAQ Accordion */
 document.addEventListener("DOMContentLoaded", function () {
-  const items = document.querySelectorAll(".accordion-item");
+    const items = document.querySelectorAll(".accordion-item");
 
-  items.forEach((item) => {
-    const button = item.querySelector(".accordion-btn");
-    button.addEventListener("click", () => {
-      // Tutup semua item terlebih dahulu
-      items.forEach((el) => el.classList.remove("active"));
-      // Buka yang diklik jika belum terbuka
-      if (!item.classList.contains("active")) {
-        item.classList.add("active");
-      }
+    items.forEach((item) => {
+      const btn = item.querySelector(".accordion-btn");
+      const content = item.querySelector(".accordion-content");
+
+      btn.addEventListener("click", () => {
+        // Tutup semua accordion lainnya
+        items.forEach((el) => {
+          if (el !== item) {
+            el.classList.remove("active");
+            el.querySelector(".accordion-content").style.maxHeight = null;
+          }
+        });
+
+        // Toggle yang diklik
+        if (item.classList.contains("active")) {
+          item.classList.remove("active");
+          content.style.maxHeight = null;
+        } else {
+          item.classList.add("active");
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
     });
   });
-});
 
 // Jalankan setiap 5 detik
 setInterval(() => showSlide(currentSlide + 1), 5000);
