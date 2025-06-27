@@ -41,6 +41,62 @@
 
         gtag('config', 'G-D96N0WF59H');
     </script>
+
+<style>
+    /* Popup Overlay */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Popup Content */
+    .popup-content {
+      position: relative;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .popup-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      line-height: 25px;
+      text-align: center;
+    }
+
+    /* Open button (for example/demo) */
+    .open-btn {
+      margin: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 
 <body>
@@ -73,6 +129,44 @@
         </div>
         <small>Dapatkan +1% Bonus Laba untuk pendaftar hari ini!</small>
     </div>
+
+    <!-- Popup -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">×</button>
+      <img src="assets/pop/b8405d275006aca82f3ab52a28975042.png" alt="Promo Produk">
+    </div>
+  </div>
+  <script>
+    function openPopup() {
+      const popup = document.getElementById("popup");
+      if (popup) {
+        popup.style.display = "flex";
+      }
+    }
+  
+    function closePopup() {
+      const popup = document.getElementById("popup");
+      if (popup) {
+        popup.style.display = "none";
+      }
+    }
+  
+    // Tampilkan popup saat halaman selesai dimuat
+    document.addEventListener("DOMContentLoaded", function () {
+      openPopup();
+  
+      // Tutup popup jika klik di luar konten
+      const overlay = document.getElementById("popup");
+      overlay.addEventListener("click", function (event) {
+        // Jika yang diklik adalah overlay (bukan kontennya)
+        if (event.target === overlay) {
+          closePopup();
+        }
+      });
+    });
+  </script>
+  
 
     <!-- Fitur & Manfaat -->
     <section id="fitur" class="features">
@@ -278,7 +372,7 @@
                     </div>
                   </div>
 
-                <div class="accordion-item">
+                  <div class="accordion-item">
                     <button class="accordion-btn">Setelah saya mendaftar, apa yang mesti dilakukan?</button>
                     <div class="accordion-content">
                       <p>
@@ -355,7 +449,10 @@
         <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat via WhatsApp">
     </a>
 
+    
+      
     <script src="script.js"></script>
+
 </body>
 
 </html>
